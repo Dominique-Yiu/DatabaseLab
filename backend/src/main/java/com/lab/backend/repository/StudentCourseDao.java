@@ -47,9 +47,10 @@ public class StudentCourseDao {
     public void update(StudentCourse studentcourse) {
         String sql="UPDATE studentcourse SET score = ? where courseClassID = ? and studentID = ?";
         jdbcTemplate.update(sql,
+                studentcourse.getScore(),
                 studentcourse.getCourseClassID(),
-                studentcourse.getStudentID(),
-                studentcourse.getScore());
+                studentcourse.getStudentID()
+                );
     }
 
     /**
@@ -68,8 +69,8 @@ public class StudentCourseDao {
     }
 
     /**
-     * 按照主键查询
-     * @param code 主键值
+     * 按照courseClassid查询
+     * @param code 字段值
      * @return 返回查询结果
      */
     public List<StudentCourse> getByCode(String code) {

@@ -29,15 +29,13 @@ public class StudentCourseController {
     }
     @PostMapping("/update")
     public Result<StudentCourse> deleteController(@RequestBody StudentCourse studentCourse){
-        int res_code = studentCourseService.insert(studentCourse);
+        int res_code = studentCourseService.update(studentCourse);
         if(res_code == 0){
             return Result.success(studentCourse);
         } else if (res_code == 1){
-            return Result.error("1","没有该学生，更新失败！");
-        } else if (res_code == 2){
-            return Result.error("2","没有课程班级，更新失败！");
+            return Result.error("1","没有找到对应的班级课程，更新失败！");
         } else {
-            return Result.error("3","没有该选课，更新失败！");
+            return Result.error("2","没有找到对应的学生，更新失败！");
         }
     }
     @PostMapping("/delete")
@@ -70,7 +68,7 @@ public class StudentCourseController {
         }
     }
     @PostMapping("/mean")
-    public Result<List<Integer>> CountMean(String studentID) {
+    public Result<List<Integer>> CountMean(@RequestParam String studentID) {
         List<Integer> list = studentCourseService.getMeanScore(studentID);
         if (!list.isEmpty()) {
             return Result.success(list, "平均分查询成功！");
