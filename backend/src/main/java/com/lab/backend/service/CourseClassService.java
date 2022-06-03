@@ -14,5 +14,12 @@ public interface CourseClassService {
 
 
     List<CourseClass> getList();
-    Map<Object, Object> query(CourseClass courseClass, int pageIndex, int pageSize);
+    Map<Object, Object> query(Map<String,Object> map, int pageIndex, int pageSize);
+    Map<Object, Object> queryByUser(Map<String,Object> map, int pageIndex, int pageSize);
+
+    int insertByTeacher(CourseClass courseClass);
+
+    int updateByTeacher(CourseClass courseClass);
+
+    int deleteByTeacher(String courseClassID);
 }

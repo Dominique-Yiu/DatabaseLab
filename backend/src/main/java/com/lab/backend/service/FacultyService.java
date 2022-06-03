@@ -15,7 +15,5 @@ public interface FacultyService {
 
     boolean update(Faculty faculty);
 
-    List<Faculty> getList();
-
     Map<Object, Object> query(Faculty faculty, int pageIndex, int pageSize);
 }
