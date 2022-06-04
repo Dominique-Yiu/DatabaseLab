@@ -90,7 +90,7 @@ public class StudentDao {
                 rs.getString("birthday"),
                 rs.getString("sex"),
                 rs.getString("grade"),
-                rs.getString("completedCredits")
+                rs.getInt("completedCredits")
         ),value);
     }
     /**
@@ -108,7 +108,7 @@ public class StudentDao {
                 "WHERE studentId = ?";
         jdbcTemplate.update(sql,
                 student.getStudentName(),
-                student.getStudentID(),
+                student.getIdentifier(),
                 student.getDormitory(),
                 student.getAddress(),
                 student.getTeleno(),
@@ -192,8 +192,8 @@ public class StudentDao {
             sql.append(" and grade like ?");
             params.add("%" +grade+ "%");
         }
-        String completedCredits= student.getCompletedCredits();
-        if(completedCredits != null && !completedCredits.trim().isEmpty()){
+        Integer completedCredits= student.getCompletedCredits();
+        if(completedCredits != null){
             sql.append(" and completedCredits like ?");
             params.add("%" +completedCredits+ "%");
         }

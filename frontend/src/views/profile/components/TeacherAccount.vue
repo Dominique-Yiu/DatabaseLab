@@ -1,7 +1,7 @@
 <template>
   <el-form :model="form" ref="form" label-width="150px" v-loading="formLoading" :rules="rules">
     <el-form-item label="教师姓名："  prop="teacherName" required>
-      <el-input v-model="form.teacherName"></el-input>
+      <el-input v-model="form.teacherName" :disabled="'disabled'"></el-input>
     </el-form-item>
 
     <el-form-item label="教师编号：" prop="teacherID" required>
@@ -9,11 +9,11 @@
     </el-form-item>
 
     <el-form-item label="所属院系名称：" prop="facultyName" required>
-      <el-input v-model="form.facultyName"></el-input>
+      <el-input v-model="form.facultyName" :disabled="'disabled'"></el-input>
     </el-form-item>
 
     <el-form-item label="所属院系编号：" prop="facultyCode" required>
-      <el-input v-model="form.facultyCode"></el-input>
+      <el-input v-model="form.facultyCode" :disabled="'disabled'"></el-input>
     </el-form-item>
   </el-form>
 </template>
