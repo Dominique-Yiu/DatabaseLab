@@ -1,5 +1,11 @@
 # Integrated Academic Management Information System
 
+## Overview
+
+<div align='center'>
+   <img src='期末汇报/数据库课程报告/900b3e81f832b2f08c2e8aabb540536a.png' width='60%' />
+</div>
+
 ## Features
 
 开发此教务管理系统软件，使教务人员及操作者进行教务管理，方便操作者随时添加、查询、修改，使工作人员从繁琐的填表，查表工作中解放出来；使供需双方都获得满意的结果；
