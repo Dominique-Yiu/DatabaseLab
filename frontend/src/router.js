@@ -579,7 +579,8 @@ console.log(constantRoutesAdmin)
 console.log(constantRoutesTeacher)
 console.log(constantRoutesStudent)
 
-const constantRoutes = constantRoutesTeacher
+// 选择用哪个角色的前端
+const constantRoutes = constantRoutesAdmin
 
 const router = new Router({
   routes: constantRoutes
